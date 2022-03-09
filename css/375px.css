@@ -1,0 +1,47 @@
+@media(max-width:440px){
+    html {
+        scroll-behavior: smooth;
+        scroll-snap-align: center;
+        overflow-x: hidden;
+      }
+
+    .start-page-bg{
+        width: 200vw;
+        height: 200vh;
+
+        background-image: url(/images/min440.png);
+    }
+    
+    .two-sided{
+        width: 200vw;    
+        height: 200vh;
+    }
+
+    .right-side-img{
+        height: 200vh;
+    }
+
+    .left-side-img{
+        height: 200vh;
+    }
+    
+    .video-content video {
+        width: 200%;
+        max-width: 200%;
+        -attachment: fixed;
+    }
+      
+    .follow{
+          width: 200vw;
+    }  
+    
+    .collection{
+        width: 200vw;
+        height: 200vh;
+    }
+
+    .collection-img{
+        height: 200vh;
+    }
+
+}

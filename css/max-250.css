@@ -1,0 +1,10 @@
+
+@media(max-width:375px){
+    .right-side-img{
+        background-image: url(/images/min250-2.png);
+    }
+
+    .left-side-img{
+        background-image: url(/images/min250-1.png);
+    }
+}

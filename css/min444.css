@@ -1,0 +1,22 @@
+@media(min-width:0px) and (max-width:1000px){
+    .video-content {
+        position: relative;
+        margin-top:0px;
+        bottom: 0;
+        right: 0;
+        height: auto;
+        width: 100vw;
+        min-height: 100%;
+        min-width: 100%;
+        z-index: -9999;    
+      }
+
+    .youtube{
+        margin-left: 50px;
+        margin-top: -200px;   
+    }
+
+    .follow{
+        margin-top: 50px;
+    }
+}
