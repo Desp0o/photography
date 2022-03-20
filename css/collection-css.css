@@ -8,7 +8,7 @@
 html {
     scroll-behavior: smooth;
     scroll-snap-align: center;
-    overflow-x: hidden;
+   
   }
 
 body{
@@ -17,87 +17,31 @@ body{
 }  
 
 .main-content{
-    padding: 50px 150px;
-
-    
-}
-
-.main-content-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-.main-content-imgs{
-    margin-top: 50px;
+.photo-gallery{
     display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 10px 0 10px;
 }
 
-img{
-    margin-right: 10px;
+.photo-column{
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+}
+
+.photo-column img{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-.imgbatumi img{
-    width: 500px;
-    height: auto;
-}
-
-.jstoggle.active{
-    width: 100%;
-    height: auto;
-}
-.imgbatumiup img{
-    width: 500px;
-    height: auto;
-    margin-top: -8px;
-}
-
-.fix1{
-    margin-top: -20px;
-}
-
-.img1 img{
-    width: 500px;
-    height: auto;
-}
-
-.img2 img{
-    width: 500px;
-    height: auto;
-}
-
-.img3 img{
-    height: 65%;
-    width: auto;
-    margin-top: -30px;
-}
-
-.img4 img{
-    height: 65%;
-    width: auto;
-    margin-left: -120px;
-    margin-top: -30px;
-}
-
-.img5 img{
-    width: 500px;
-    height: auto;
-
-    position:absolute;
-    margin-left: -130px;
-    margin-top: 21px;
-}
-
-.img6 img{
-    width: 96.5%;
-    height: auto;
-
-    margin-top: -220px;
-}
-
-.img7 img{
-    width: 96.5%;
-    height: auto;
 }
