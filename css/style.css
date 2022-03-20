@@ -51,6 +51,19 @@ ul{
     margin-left: 20px;
 }
 
+.openSea{
+    border: 1px solid #cc9e48;
+    border-radius: 10px;
+    
+    padding: 3px 8px;
+
+    transition: all 0.4s;
+}
+
+.openSea:hover{
+    background-color: #cc9e48;
+}
+
 .start-page-logo img{
     width: 50px;
     cursor: pointer;
@@ -90,9 +103,9 @@ ul{
     font-size: 20px;
     letter-spacing: 3px;
     text-decoration: none;
-    color: #FFCC00;
+    color: #cc9e48;
 
-    border: 1px solid #FFCC00;
+    border: 1px solid #cc9e48;
     padding: 5px 15px;
     width: fit-content;
 
@@ -160,7 +173,7 @@ ul{
     font-size: 20px;
     letter-spacing: 3px;
 
-    border: 1px solid #FFCC00;
+    border: 1px solid #cc9e48;
 
     width: fit-content;
     padding: 5px 15px;
@@ -170,7 +183,7 @@ ul{
 
 .collection-explore a{
     text-decoration: none;
-    color: #FFCC00;
+    color: #cc9e48;
 }
 
 .collection-explore:hover{
@@ -217,7 +230,7 @@ ul{
   }
 
   .more-vids{
-    border: 1px solid #FFCC00;
+    border: 1px solid #cc9e48;
     width: fit-content;
     padding: 5px 15px;
 
@@ -233,7 +246,7 @@ ul{
     font-size: 18px;
     letter-spacing: 3px;
     text-decoration: none;
-    color: #FFCC00;
+    color: #cc9e48;
   }
 
 /*********** follow ***********/

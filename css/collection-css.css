@@ -17,6 +17,51 @@ body{
     font-family: 'Playfair Display', serif;
 }  
 
+.start-page-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+    background-color: hsla(0, 0.5%, 98%, 0.2);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    padding: 10px 0;
+    
+}
+
+ul{
+    display: flex;
+}
+
+.start-page-menu-list{
+    list-style: none;
+}
+
+.start-page-menu-links{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.openSea{
+    border: 1px solid #cc9e48;
+    border-radius: 10px;
+    
+    padding: 3px 8px;
+
+    transition: all 0.4s;
+}
+
+.openSea:hover{
+    background-color:#cc9e48;
+}
+
+.start-page-logo img{
+    width: 50px;
+    cursor: pointer;
+}
+
 .main-content{
     display: flex;
     flex-direction: column;
@@ -30,15 +75,19 @@ body{
     justify-content: center;
     align-items: center;
 
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .content-title h1{
     font-size: 3em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 .content-title span{
-    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #cc9e48;
 }
 
 .title-line{
@@ -53,7 +102,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     padding: 0 10px 0 10px;
     margin-top:50px;
