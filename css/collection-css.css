@@ -122,3 +122,54 @@ ul{
     cursor: pointer;
 }
 
+@media (min-width:400px) and (max-width:650px){
+    .start-page-nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        width: 100vw;
+        padding: 10px 0;
+    }
+
+    .main-content{
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    .title-line{
+        width: 110%;
+    }
+}
+
+@media (max-width:399px){
+    .photo-gallery{
+        flex-direction: column;
+    }
+
+    .photo-column{
+        width: 100%;
+    }
+
+    .title-line{
+        width: 100%;
+    }
+
+    .main-content{
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    .start-page-nav{
+        width: 100vw;
+    }
+
+    .start-page-menu-links{
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    .content-title h1{
+        font-size: 2.5em;
+    }
+}
