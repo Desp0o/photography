@@ -122,6 +122,29 @@ ul{
     cursor: pointer;
 }
 
+/*********** follow ***********/
+.follow{
+    width: 100vw;
+    height: 200px;
+    margin-top: 240px;
+    padding-top: 45px;
+
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 8px;
+
+    background-color: white;
+}
+
+.follow-inner{
+    margin-top: 25px;
+}
+
+.follow-inner img{
+    width: 25px;
+}
+
 @media (min-width:400px) and (max-width:650px){
     .start-page-nav{
         display: flex;

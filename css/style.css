@@ -76,7 +76,7 @@ ul{
 }
 
 .left-side-img{
-    background-image: url(/images/IMG_9841-2.jpg);
+    background-image: url(/images/slice.jpg);
     width: 49.9%;
     height: 550px;
     position: center;
@@ -121,7 +121,7 @@ ul{
 }
 
 .right-side-img{
-    background-image: url(/images/IMG_9841.jpg);
+    background-image: url(/images/slice.left.jpg);
     width: 49.9%;
     height: 550px;
     right: 0;
