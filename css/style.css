@@ -60,7 +60,7 @@ ul{
     content: '';
     position: absolute;
     width: 0%;
-    height: 2px;
+    height: 1px;
     background-color: #cc9e48;
     left: 0;
     bottom: 0;
@@ -272,9 +272,9 @@ ul{
 /*********** follow ***********/
   .follow{
       width: 100vw;
-      height: 200px;
-      margin-top: 240px;
-      padding-top: 45px;
+      height: 100px;
+      margin-top: 235px;
+      padding-top: 25px;
 
       text-align: center;
       font-family: 'Bebas Neue', cursive;
@@ -285,11 +285,23 @@ ul{
   }
 
   .follow-inner{
-      margin-top: 25px;
+      margin-top: 5px;
   }
 
   .follow-inner img{
       width: 25px;
   }
+
+  .buildBy{
+      text-align: start !important;
+      letter-spacing: normal !important;
+      font-size: 14px !important;
+      margin-left: 20px;
+  }
+
+  .buildBy a{
+    text-decoration: none;
+    color: black;
+}
 
   
