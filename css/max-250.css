@@ -1,10 +1,19 @@
 
-@media(max-width:375px){
+@media(max-width:610px){
+    .start-page-bg{
+        background-image: url(/images/510top.jpg);
+    }
+
     .right-side-img{
-        background-image: url(/images/min250-2.png);
+        background-image: url(/images/510right.png);
+    }
+
+    .left-side-line{
+        width: 0.5%;
+        height: 550px;
     }
 
     .left-side-img{
-        background-image: url(/images/min250-1.png);
+        background-image: url(/images/510left.jpg);
     }
 }

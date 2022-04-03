@@ -9,7 +9,7 @@
         width: 200vw;
         height: 200vh;
 
-        background-image: url(/images/min440.png);
+        background-image: url(/images/440.jpg) !important;
     }
     
     .two-sided{
