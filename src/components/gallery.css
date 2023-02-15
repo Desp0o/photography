@@ -1,0 +1,176 @@
+
+/* main container */
+.gallery-wrap{
+    padding: 50px;
+    column-count: 4;
+    column-width: 70%;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+/* simgle image container */
+.thumbnail{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* image thumbnail */
+.thumbnail img{
+    max-height: 60%;
+    max-width: 100%;
+    transition: all 0.4s ease;
+    border-radius: 10px;
+}
+
+/* image thumbnail cover */
+.thumbnail img:hover{
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+}
+
+
+
+/* full screen */
+
+/* full screen container */
+.sliderWrap{
+    top: 0;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* overlay background */
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
+}
+
+/* buttons */
+.buttonHandler{
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+}
+
+.arrowLeft{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: 150px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.arrowRight{
+    position: absolute;
+    width: 32px;
+    top: 50%;
+    right: 150px;
+    transform: rotate(180deg) translate(-50%);  
+    cursor: pointer;  
+}
+
+.closeBtn{
+    position: absolute;
+    width: 24px;
+    right: 50px;
+    top:25px;
+    cursor: pointer;
+}
+
+/* full screen image */
+.fullScreenImage{
+    position: absolute;
+    
+    max-width: 100%;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fullScreenImage img{
+    width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+.galleryTitle{
+    width: fit-content;
+    margin: auto;
+    font-weight: 700;
+    font-size: 70px;
+    font-family: 'Montserrat';
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+
+.filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    font-family: 'Montserrat';
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+@media (max-width:1200px) {
+    .gallery-wrap{
+        column-count: 2;
+        padding: 20px;
+    }
+    .fullScreenImage{
+        width: 95%;
+    }
+
+    .arrowLeft{
+
+        left: 40%;
+        top: 85%;
+
+    }
+    
+    .arrowRight{
+        right: 40%;
+        top: 85%;
+    }
+    
+    .closeBtn{
+        right: 25px;
+    }
+
+    .galleryTitle{
+        font-size: 50px;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+
+    .fullScreenImage img{
+        width: auto;
+        margin: auto;
+        max-width: 100%;
+        max-height: 400px;
+        border-radius: 10px;
+    }
+}
