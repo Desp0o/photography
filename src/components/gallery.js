@@ -1,5 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import './gallery.css'
+import truck from '../images/truck.gif'
+
+import axios from "axios"
 
 import arrow from '../images/dirArrow.png'
 import close from '../images/closeBtn.png'
@@ -9,13 +12,15 @@ export default function Galler1y(){
     const [data, setData] = useState([]);
     const [slideNumber, setSlideNumber] = useState(0)
     const [openModal, setOpenModal] = useState(false)
-    const [num,setnum] = useState(0)
+    const [num, setnum] = useState(0)
+    const [load, setLoad] = useState(false)
 
     useEffect(() => {
-        fetch('https://desp0o.github.io/dataBase/dataBase.json')
-        .then(response => response.json())
-        .then(data => setData(data[num].list));
-        
+
+        axios.get('https://desp0o.github.io/dataBase/dataBase.json')
+            .then(res => setData(res.data[num].list))
+            setLoad(true)
+
     }, [num]);
 
     
@@ -99,21 +104,23 @@ function filter(number){
        
         <div className='gallery-wrap'>
         
-            {
-                data && data.map((slide, index) => {
 
-                    return(
-                        <div 
-                            className='thumbnail' 
-                            key={index}
-                            onClick={() => handleOpenModal(index)}>
-                                <img src={slide.image} alt='slide'/>
-                        </div>
-                    )
-                })
-            }
+                {
+                    load ? data.map((slide, index) => {
 
-                        
+                        return(
+                           
+                            <div 
+                                className='thumbnail' 
+                                key={index}
+                                onClick={() => handleOpenModal(index)}
+                            >
+                                <img src={slide.image} alt='slide'/>            
+                            </div>
+                        )
+                    })
+                    : <img src={truck} style={{width:'400px'}}/>
+                }        
         </div>
 
         </>
