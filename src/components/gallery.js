@@ -14,13 +14,28 @@ export default function Galler1y(){
     const [openModal, setOpenModal] = useState(false)
     const [num, setnum] = useState(0)
     const [load, setLoad] = useState(false)
+    const [observer, setObserver] = useState(null);
 
     useEffect(() => {
 
-        axios.get('https://desp0o.github.io/dataBase/dataBase.json')
-            .then(res => setData(res.data[num].list))
-            setLoad(true)
+        axios.get('https://desp0o.github.io/dataBase/dataBase.json').then(res => {
+            setData(res.data[num].list);
+            setLoad(true);
+          });
 
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove('lazy');
+                observer.unobserve(lazyImage);
+              }
+            });
+          });
+      
+          setObserver(observer);
+          
     }, [num]);
 
     
@@ -65,9 +80,9 @@ export default function Galler1y(){
     },[slideNumber])
 
     
-function filter(number){
-    setnum(number)
-}
+    function filter(number){
+        setnum(number)
+    }
 
 
     return(
@@ -115,11 +130,21 @@ function filter(number){
                                 key={index}
                                 onClick={() => handleOpenModal(index)}
                             >
-                                <img src={slide.image} alt='slide'/>            
+                                <img  
+                                    src={truck} 
+                                    data-src={slide.image} 
+                                    alt='slide'
+                                    className="lazy"
+                                    ref={el => {
+                                        if (el && observer) {
+                                          observer.observe(el);
+                                        }
+                                      }}
+                                />            
                             </div>
                         )
                     })
-                    : <img src={truck} style={{width:'400px'}}/>
+                    : <img src={truck}/>
                 }        
         </div>
 

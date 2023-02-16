@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/homePage";
-import Gallery1 from "./components/gallery/gallery";
+import Gallery1 from "./components/gallery";
 
 
 function App() {
