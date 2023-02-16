@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/photography/static/css/main.de54197a.css",
+    "main.js": "/photography/static/js/main.6121bd08.js",
+    "static/media/truck.gif": "/photography/static/media/truck.a3cff4369637717f8ecc.gif",
+    "static/media/OpenSans.ttf": "/photography/static/media/OpenSans.ceb05254cedfa895b512.ttf",
+    "static/media/mainBg.webp": "/photography/static/media/mainBg.705011e4674892916626.webp",
+    "static/media/Montserrat.ttf": "/photography/static/media/Montserrat.3faa3eef13649db02044.ttf",
+    "index.html": "/photography/index.html",
+    "main.de54197a.css.map": "/photography/static/css/main.de54197a.css.map",
+    "main.6121bd08.js.map": "/photography/static/js/main.6121bd08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de54197a.css",
+    "static/js/main.6121bd08.js"
+  ]
+}
