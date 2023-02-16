@@ -4,9 +4,6 @@ import Gallery1 from "./components/gallery/gallery";
 
 
 function App() {
-        // const response = await fetch('https://desp0o.github.io/dataBase/dataBase.json');
-
-        console.log('https://desp0o.github.io/dataBase/dataBase.json');
   return (
     <Routes>
       <Route exact path="*" element={<HomePage />} />
