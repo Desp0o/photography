@@ -121,6 +121,15 @@ body.modal-open {
     margin-bottom: 25px;
 }
 
+.sliderNUmber{
+    position: absolute;
+    z-index: 8;
+    bottom:30px;
+    color: #fff;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 
 .filter{
     display: flex;
@@ -195,14 +204,18 @@ body.modal-open {
 
     .arrowLeft{
 
-        left: 40%;
+        left: 35%;
         top: 85%;
 
     }
     
     .arrowRight{
-        right: 40%;
+        right: 35%;
         top: 85%;
+    }
+
+    .sliderNUmber{
+        top: 86.25%;
     }
     
     .closeBtn{

@@ -9,22 +9,25 @@ import close from '../images/closeBtn.png'
 
 
 export default function Galler1y(){
-    const [data, setData] = useState([]);
-    const [slideNumber, setSlideNumber] = useState(0)
-    const [openModal, setOpenModal] = useState(false)
-    const [num, setnum] = useState(0)
-    const [load, setLoad] = useState(false)
-    const [observer, setObserver] = useState(null);
+    const [data, setData] = useState([]); //storing data from API
+    const [slideNumber, setSlideNumber] = useState(0) // active slidenumber in open modal
+    const [openModal, setOpenModal] = useState(false) // modal state
+    const [num, setnum] = useState(0) // num for json file 
+    const [observer, setObserver] = useState(null); 
 
+    // state to keep track of touch events
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+
+    //remove scroll disable on page load
     useEffect(()=>{
-        document.body.classList.remove('modal-open');
+        document.body.classList.remove('modal-open'); 
     },[])
 
     useEffect(() => {
 
         axios.get('https://desp0o.github.io/dataBase/dataBase.json').then(res => {
-            setData(res.data[num].list);
-            setLoad(true);
+            setData(res.data[num].list)
           });
 
           const observer = new IntersectionObserver(entries => {
@@ -42,18 +45,40 @@ export default function Galler1y(){
           
     }, [num]);
 
-    
+
+    // handle touch start event
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    }
+
+    // handle touch move event
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    }
+
+    // handle touch end event
+    const handleTouchEnd = () => {
+        // calculate distance
+        const touchDistance = touchEnd - touchStart;
+        // check direction
+        if (touchDistance > 0) {
+            prevSlide();
+        } else if (touchDistance < 0) {
+            nextSlide();
+        }
+    }
+
     //open modal
     const handleOpenModal = (index) => {
         setSlideNumber(index)
         setOpenModal(true)
-        document.body.classList.add('modal-open');
+        document.body.classList.add('modal-open'); //prevent scroll while modal is open
     }
 
-    //open modal
+    //close modal
     const handleCloseModal = () => {
         setOpenModal(false)
-        document.body.classList.remove('modal-open');
+        document.body.classList.remove('modal-open'); //remove scroll disable on page load
     }
 
     //previous slide
@@ -117,9 +142,12 @@ export default function Galler1y(){
 
                     {/* full screen image */}
                     <div className='fullScreenImage'>
-                        <img src={data[slideNumber].image} alt='full' />
+                        <img src={data[slideNumber].image} alt='full' 
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}/>
                     </div>
-
+                    <p className='sliderNUmber'>{slideNumber + 1} / {data.length}</p>
                 </div>
         }
        
