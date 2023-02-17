@@ -1,10 +1,16 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import mainBg from '../images/mainBg.webp'
 
 export default function HomePage(){
+
+    useEffect(()=>{
+        document.body.classList.add('modal-open');
+    },[])
+
     return(
 
-        <div className="w-full h-[100vh] flex overflow-y-hidden">
+        <div className="w-full h-[100vh] flex overflow-hidden">
 
             {/* left side */}
             <div className="w-[55%] h-[100vh] pl-[100px] pt-[80px] bg-[#212121]

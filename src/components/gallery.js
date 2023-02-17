@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import './gallery.css'
-import truck from '../images/truck.gif'
+import spinner from '../images/spinner.gif'
 
 import axios from "axios"
 
@@ -15,6 +15,10 @@ export default function Galler1y(){
     const [num, setnum] = useState(0)
     const [load, setLoad] = useState(false)
     const [observer, setObserver] = useState(null);
+
+    useEffect(()=>{
+        document.body.classList.remove('modal-open');
+    },[])
 
     useEffect(() => {
 
@@ -32,7 +36,7 @@ export default function Galler1y(){
                 observer.unobserve(lazyImage);
               }
             });
-          });
+          }, { once: true });
       
           setObserver(observer);
           
@@ -43,11 +47,13 @@ export default function Galler1y(){
     const handleOpenModal = (index) => {
         setSlideNumber(index)
         setOpenModal(true)
+        document.body.classList.add('modal-open');
     }
 
     //open modal
     const handleCloseModal = () => {
         setOpenModal(false)
+        document.body.classList.remove('modal-open');
     }
 
     //previous slide
@@ -118,10 +124,9 @@ export default function Galler1y(){
         }
        
         <div className='gallery-wrap'>
-        
 
                 {
-                    load ? data.map((slide, index) => {
+                    data ? data.map((slide, index) => {
 
                         return(
                            
@@ -131,10 +136,10 @@ export default function Galler1y(){
                                 onClick={() => handleOpenModal(index)}
                             >
                                 <img  
-                                    src={truck} 
+                                    src={spinner} 
                                     data-src={slide.image} 
                                     alt='slide'
-                                    className="lazy"
+                                    
                                     ref={el => {
                                         if (el && observer) {
                                           observer.observe(el);
@@ -144,10 +149,11 @@ export default function Galler1y(){
                             </div>
                         )
                     })
-                    : <img src={truck}/>
+                     : <div className='loader'><div class="custom-loader"></div></div>
                 }        
         </div>
-
+        
+        
         </>
     )
 }
