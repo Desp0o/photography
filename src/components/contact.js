@@ -60,7 +60,8 @@ export default function Contact(){
                                     placeholder="...@example.com"
                                     className="w-[450px] xs:w-[310px] h-[80px] xs:h-[40] bg-transparent 
                                         border rounded-[2px] border-[#FFF] focus:outline-none caret-white
-                                        text-[24px] text-[#FFF] font-[600] leading-[33px] pl-[15px] pt-[40px] placeholder:text-[#fff] xs:border-none"></input>
+                                        text-[24px] text-[#FFF] font-[600] leading-[33px] pl-[15px] pt-[40px] placeholder:text-[#fff] 
+                                        xs:border-none xs:placeholder:text-[16px]"></input>
                             <span className="absolute left-[15px] top-[10px] font-[700] text-[16px] leading-[22px]
                                             text-[#FFF] font-['Open Sans']">Email</span>
                         </div>
@@ -101,8 +102,8 @@ export default function Contact(){
 
                         <button
                             type="submit" 
-                            className="hidden xs:flex bg-[#fff] justify-center items-center w-[450px] xs:w-[310px] h-[80px] rounded-[2px]">
-                            <span className="font-['Montserrat] font-[700] text-[24px]">Send</span>
+                            className="hidden xs:flex bg-[#fff] justify-center items-center w-[450px] xs:w-[310px] h-[42px] rounded-[2px] xs:rounded-[5px]">
+                            <span className="font-['Montserrat] font-[700] text-[24px] xs:text-[16px]">Send</span>
                         </button>
                     </div>
                 </form>
