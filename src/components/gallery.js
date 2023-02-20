@@ -6,6 +6,7 @@ import axios from "axios"
 
 import arrow from '../images/dirArrow.png'
 import close from '../images/closeBtn.png'
+import Navbar from './navbar';
 
 
 export default function Galler1y(){
@@ -112,12 +113,18 @@ export default function Galler1y(){
 
     
     function filter(number){
+        setData('')
         setnum(number)
     }
 
 
     return(
         <>
+        <Navbar 
+            linkName='Contact'
+            directLink='/components/contact'
+        />
+
         <h1 className='galleryTitle'>Gallery</h1>
         <div className='filter'>
             <p onClick={()=>filter('0')}>All</p>
@@ -177,7 +184,7 @@ export default function Galler1y(){
                             </div>
                         )
                     })
-                     : <div className='loader'><div class="custom-loader"></div></div>
+                     : <div className='loader'><div className="custom-loader"></div></div>
                 }        
         </div>
         

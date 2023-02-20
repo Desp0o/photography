@@ -15,7 +15,7 @@ export default function HomePage(){
             {/* left side */}
             <div className="w-[55%] h-[100vh] pl-[100px] pt-[80px] bg-[#212121]
                                 xs:w-full xs:absolute xs:bg-transparent xs:pl-[40px]">
-                <p>logo</p>
+                <p className="text-[30px] text-[#FFF] font-[800] font-['Montserrat']">Shutterpics</p>
 
                 <div className='flex flex-col gap-[30px] my-[100px] xl:my-[200px] 
                                 xs:gap-[10px] xs:absolute xs:left-[40px] xs:bottom-[80px]'>
@@ -34,10 +34,11 @@ export default function HomePage(){
                                         xs:w-[113px] xs:h-[40px] xs:pointer-events-none'>
                                             
                             <p className="text-[24px] text-[#FFF] font-[700] font-['Montserrat']
-                                             xs:text-[16px]">Portfolio</p>
+                                             xs:text-[16px]">Gallery</p>
                         </div>
                         </Link>
 
+                        <Link to='/components/contact'>
                         <div className='bg w-[195px] h-[53px] flex justify-center items-center shadow-myShadow rounded-[10px] 
                                         hover:my-[-10px] transition-all duration-[400] ease-linear cursor-pointer
                                         xs:w-[138px] xs:h-[40px] xs:pointer-events-none'>
@@ -45,6 +46,7 @@ export default function HomePage(){
                             <p className="text-[24px] text-[#FFF] font-[700] font-['Montserrat']
                                             xs:text-[16px]">Contact me</p>
                         </div>
+                        </Link>
                     </div>
                 </div>
             </div>
