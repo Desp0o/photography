@@ -28,6 +28,7 @@ export default function Galler1y(){
     useEffect(() => {
 
         axios.get('https://desp0o.github.io/dataBase/dataBase.json').then(res => {
+            
             setData(res.data[num].list)
           });
 
@@ -41,8 +42,10 @@ export default function Galler1y(){
               }
             });
           }, { once: true });
-      
+          
           setObserver(observer);
+
+         
           
     }, [num]);
 
@@ -159,10 +162,10 @@ export default function Galler1y(){
         }
        
         <div className='gallery-wrap'>
-
+                
                 {
                     data ? data.map((slide, index) => {
-
+    
                         return(
                            
                             <div 
