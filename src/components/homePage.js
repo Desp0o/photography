@@ -28,7 +28,7 @@ export default function HomePage(){
                 
                     {/* buttons */}
                     <div className='flex gap-[40px] xs:gap-[20px]'>
-                        <Link to='/components/gallery'>
+                        <Link to='/components/gallery/gallery'>
                         <div className='bg w-[158px] h-[53px] flex justify-center items-center shadow-myShadow rounded-[10px] 
                                         hover:my-[-10px] transition-all duration-[400] ease-linear cursor-pointer
                                         xs:w-[113px] xs:h-[40px] xs:pointer-events-none'>
@@ -38,7 +38,7 @@ export default function HomePage(){
                         </div>
                         </Link>
 
-                        <Link to='/components/contact'>
+                        <Link to='/components/contact/contact'>
                         <div className='bg w-[195px] h-[53px] flex justify-center items-center shadow-myShadow rounded-[10px] 
                                         hover:my-[-10px] transition-all duration-[400] ease-linear cursor-pointer
                                         xs:w-[138px] xs:h-[40px] xs:pointer-events-none'>

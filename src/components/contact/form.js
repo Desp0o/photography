@@ -1,41 +1,67 @@
 import { useRef, useEffect, useState } from "react";
-import Navbar from "./navbar";
 import emailjs from '@emailjs/browser'
 
-export default function Contact(){
-    const form       = useRef()
-    const nameRef    = useRef()
-    const nameDivRef = useRef()    
-    const emailRef   = useRef()
-    const emailDivRef = useRef()
-    const subjecRef  = useRef()
+export default function Form(){
+    const form          = useRef()
+    const nameRef       = useRef()
+    const nameDivRef    = useRef()    
+    const emailRef      = useRef()
+    const emailDivRef   = useRef()
+    const subjecRef     = useRef()
     const subjectDivRef = useRef()
-    const messageRef = useRef()   
+    const messageRef    = useRef()   
     const messageDivRef = useRef()
     
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
-    const [message, setMessage] = useState('')
+    const [name, setName]     = useState('')
+    const [isName, setIsName] = useState(false)
+
+    const [email, setEmail]     = useState('')
+    const [isEmail, setIsEmail] = useState(true)
+
+    const [subject, setSubject]     = useState('')
+    const [isSubject, setIsSubject] = useState(false)
+
+    const [message, setMessage]     = useState('')
+    const [isMessage, setIsMessage] = useState(false)
+
+    const [isCorrect, setIsCorrect] = useState('hidden')
 
     useEffect(()=>{
         document.body.classList.remove('modal-open'); 
     },[])
 
+    //if input values is correct
+    function greenText(){
+        setIsCorrect('block')
+
+        const greenTimeOut = setTimeout(()=>{
+            setIsCorrect('hidden')
+        },10000)
+    }
+
+    //email send function
     const sendEmail =(e)=>{
         e.preventDefault();
+
+        if(isName && isEmail && isSubject && isMessage){
+            emailjs.sendForm('service_bpng7e7', 'template_y2xffsh', form.current, 'k5sgg72-uloGuXB_E')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+
+            greenText()
+            e.target.reset()
+        }else{
+            valueCheck()
+        }
     
-        // emailjs.sendForm('service_bpng7e7', 'template_y2xffsh', form.current, 'k5sgg72-uloGuXB_E')
-        //   .then((result) => {
-        //       console.log(result.text);
-        //   }, (error) => {
-        //       console.log(error.text);
-        //   });
-        //   e.target.reset()
+        
 
     }
 
-    
+    //checking if values are correct
     function valueCheck(){
         if(window.innerWidth > 769){
             
@@ -49,6 +75,7 @@ export default function Contact(){
     
             if(!email.includes('@')){
                 emailRef.current.style.border = '1px solid red'
+                setIsEmail(false)
             }
     
             if(messageRef.current.value === ''){
@@ -66,6 +93,7 @@ export default function Contact(){
     
             if(!email.includes('@')){
                 emailDivRef.current.style.borderBottom = '2px solid red'
+                setIsEmail(false)
             }
     
             if(messageRef.current.value === ''){
@@ -75,7 +103,6 @@ export default function Contact(){
 
         
     }
-
 
     function nameHandler(event){
         setName(event.target.value)
@@ -88,51 +115,62 @@ export default function Contact(){
     function subjectHandler(event){
         setSubject(event.target.value)
     }
+
     function messageHandler(event){
         setMessage(event.target.value)
     }
 
+    //changing border colors if values gets correct
     useEffect(()=>{
         
         if(window.innerWidth > 769){
             if(name.length > 1){
                 nameRef.current.style.border = '1px solid #FFF'
+                setIsName(true)
             }
-    
-            if(emailRef.current.style.border === '1px solid red' && !email.includes('@')){
-                emailRef.current.style.border = '1px solid red'
-            }else{
-                emailRef.current.style.border = '1px solid #FFF'
+
+            if(!isEmail){
+                if(email.includes('@') && email.length > 5){
+                    emailRef.current.style.border = '1px solid #fff'
+                    setIsEmail(true)
+                }else{
+                    emailRef.current.style.border = '1px solid red'
+                }
             }
     
             if(subject.length > 2){
                 subjecRef.current.style.border = '1px solid #FFF'
+                setIsSubject(true)
             }
     
             if(message.length > 2){
                 messageRef.current.style.border = '1px solid #FFF'
+                setIsMessage(true)
             }
         }else{
             if(name.length > 1){
                 nameDivRef.current.style.borderBottom = '2px solid #FFF'
+                setIsName(true)
             }
 
-            if(email.length > 2){
-                emailDivRef.current.style.borderBottom = '2px solid #FFF'
-            }
+            
+                if(email.includes('@') && email.length > 5){
+                    emailDivRef.current.style.borderBottom = '2px solid #FFF'
+                    setIsEmail(true)
+                }else{
+                    emailDivRef.current.style.borderBottom = '2px solid red'
+                }
+            
     
             if(subject.length > 2){
                 subjectDivRef.current.style.borderBottom = '2px solid #FFF'
+                setIsSubject(true)
             }
     
             if(message.length > 2){
                 messageDivRef.current.style.borderBottom = '2px solid #FFF'
+                setIsMessage(true)
             }
-        }
-
-
-        if(emailRef.current.style.border === '1px solid red'){
-            console.log('hey');
         }
 
     },[name, message, email, subject])
@@ -140,16 +178,8 @@ export default function Contact(){
 
 
     return(
-        <div className="w-full bg-[#212121] pb-[50px]">
-            <Navbar
-                linkName='Gallery'
-                directLink='/components/gallery'
-            />
-
-            <div className="my-[100px]">
-                <p className="text-[48px] xs:text-[36px] text-[#FFF] font-[700] font-['Montserrat'] mx-auto w-fit">Contact form</p>
-                <p className="text-[15px] xs:text-[36px] text-[#FFF] font-[700] font-['Montserrat'] mx-auto w-fit capitalize">for original sizes or any question</p>
-                
+        <>
+           
 
                 <form 
                     ref={form}
@@ -235,10 +265,14 @@ export default function Contact(){
                             <span className="font-['Montserrat] font-[700] text-[24px] xs:text-[16px]">Send</span>
                         </button>
                     </div>
-                </form>
-            </div>
 
-        </div>
+                </form>
+
+                <p className={`text-[15px] xs:text-[12px] text-[green] 
+                              font-[700] font-['Montserrat'] mx-auto w-fit capitalize
+                              my-[20px] ${isCorrect}`}>Thank you for message, will answer ASAP!</p>
+            
+        </>
 
         
     )

@@ -1,12 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import './gallery.css'
-import spinner from '../images/spinner.gif'
+import spinner from '../../images/spinner.gif'
 
 import axios from "axios"
 
-import arrow from '../images/dirArrow.png'
-import close from '../images/closeBtn.png'
-import Navbar from './navbar';
+import arrow from '../../images/dirArrow.png'
+import close from '../../images/closeBtn.png'
+import Navbar from '../navbar';
 
 
 export default function Galler1y(){
@@ -125,7 +125,7 @@ export default function Galler1y(){
         <>
         <Navbar 
             linkName='Contact'
-            directLink='/components/contact'
+            directLink='/components/contact/contact'
         />
 
         <h1 className='galleryTitle'>Gallery</h1>
