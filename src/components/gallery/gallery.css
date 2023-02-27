@@ -2,7 +2,7 @@
 /* main container */
 .gallery-wrap{
     display: grid;
-    grid-template-columns: repeat(3, auto) !important;
+    grid-template-columns: repeat(3, auto);
     grid-auto-rows: 300px;
     gap: 20px;
 
