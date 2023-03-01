@@ -15,7 +15,7 @@ export default function HomePage(){
             {/* left side */}
             <div className="w-[55%] h-[100vh] pl-[100px] pt-[80px] bg-[#212121]
                                 xs:w-full xs:absolute xs:bg-transparent xs:pl-[40px]">
-                <p className="text-[30px] text-[#FFF] font-[800] font-['Montserrat']">Shutterpics</p>
+                <p className="text-[30px] text-[#FFF] font-[800] font-['Montserrat'] mainLogo"></p>
 
                 <div className='flex flex-col gap-[30px] my-[100px] xl:my-[200px] 
                                 xs:gap-[10px] xs:absolute xs:left-[40px] xs:bottom-[80px]'>
