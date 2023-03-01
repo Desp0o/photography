@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import mainBg from '../images/Tent-3.jpg'
+import mainBg from '../images/mainBg.webp'
 
 export default function HomePage(){
 
