@@ -41,61 +41,6 @@ code {
   background: linear-gradient(225deg, #1e1e1e, #232323);
 }
 
-@media (max-width:769px) {
-  .bg{
-    background: #212121c0;
-  }
-
-  body{
-    scroll-behavior: smooth;
-    scroll-snap-align: center;
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
-  }
-
-  .gallery{
-    
-    scroll-snap-type: x mandatory;
-  }
-
-  /* .gallery::-webkit-scrollbar{
-    width: 0px;
-    height: 0px;
-  } */
-
- 
-}
-.imgclass{
-  height: 500px;
-}
-.gallery{
-  overflow: auto;
-}
-
-.gallery::-webkit-scrollbar{
-  width: 5px;
-  height: 5px;
-}
-
-.gallery::-webkit-scrollbar-track{
-  background-color: transparent;
-}
-
-.gallery::-webkit-scrollbar-thumb{
-  background-color: white;
-  border-radius: 10px;
-}
-
-
-.img-responsive{
-  width: 350px !important;
-}
-
-.gallery-item {
-  margin: 25px;
-  width: 350px !important;
-}
-
 .burgerMenu{
   flex-direction: column;
   justify-content: center;
@@ -106,17 +51,14 @@ code {
   cursor: pointer;
 }
 
-
-
-
 .dashboard{
   width: 100%;
   padding: 20px 10px 20px 10px;
   background-color: #212121;
   color: white;
   position: absolute;
-  top: 80px;
-  right: -100%;
+  
+  top: calc(-100% - 80px);
 
   display: flex;
   flex-direction: column;
@@ -130,6 +72,6 @@ code {
 }
 
 .dashboard_active{
-  right: 0;
+  top: 80px;
   transition: all 0.4s ease;
 }

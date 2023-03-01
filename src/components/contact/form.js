@@ -154,12 +154,14 @@ export default function Form(){
             }
 
             
+            if(!isEmail){
                 if(email.includes('@') && email.length > 5){
-                    emailDivRef.current.style.borderBottom = '2px solid #FFF'
+                    emailDivRef.current.style.borderBottom = '1px solid #fff'
                     setIsEmail(true)
                 }else{
-                    emailDivRef.current.style.borderBottom = '2px solid red'
+                    emailDivRef.current.style.borderBottom = '1px solid red'
                 }
+            }
             
     
             if(subject.length > 2){
@@ -179,8 +181,6 @@ export default function Form(){
 
     return(
         <>
-           
-
                 <form 
                     ref={form}
                     onSubmit={sendEmail} 
@@ -273,7 +273,5 @@ export default function Form(){
                               my-[20px] ${isCorrect}`}>Thank you for message, will answer ASAP!</p>
             
         </>
-
-        
     )
 }

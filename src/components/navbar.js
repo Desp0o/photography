@@ -23,8 +23,8 @@ export default function Navbar(props){
     }
 
     return(
-        <div className='w-full h-[80px] flex items-center justify-between pl-[50px] xs:pl-[15px] pr-[50px] xs:pr-[15px] box-border'>
-            <p className="text-[30px] xs:text-[24px] text-[#FFF] font-[800] font-['Montserrat']">Shutterpics</p>
+        <div className='w-full h-[80px] flex items-center justify-between box-border pr-[50px] xs:pr-[15px]'>
+            <Link to='/components/homePage'><p className="pl-[50px] xs:pl-[15px] text-[30px] xs:text-[24px] text-[#FFF] font-[800] font-['Montserrat'] relative z-20 select-none">Shutterpics</p></Link>
 
             <div className='flex gap-[30px] xs:hidden'>
                 <Link to='/components/homePage'><p className="text-[16px] text-[#FFF]  font-[400] font-['Montserrat'] cursor-pointer">Home</p></Link>
@@ -32,7 +32,7 @@ export default function Navbar(props){
             </div>
 
             <div 
-                className='burgerMenu hidden xs:flex'
+                className='burgerMenu hidden xs:flex relative z-20'
                 onClick={hamburgerHandler}
             >
                 <img src={img} alt='burger icons' />
