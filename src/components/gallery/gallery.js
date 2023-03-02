@@ -28,9 +28,11 @@ export default function Galler1y(){
     useEffect(() => {
 
         axios.get('https://desp0o.github.io/dataBase/dataBase.json').then(res => {
-            
             setData(res.data[num].list)
-          });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 
           const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
